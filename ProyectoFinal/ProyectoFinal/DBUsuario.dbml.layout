@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBUsuario">
+  <DataContextMoniker Name="/DBUsuarioDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9e1bd3b0-c672-4dd9-bfda-772cd6f7a6c2" absoluteBounds="2.25, 1.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBUsuarioDataContext/TBJEFATURA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dea68312-77f7-497d-8035-910f9800b845" absoluteBounds="2.2649999999999997, 1.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7726cb56-02b6-4c56-86f4-7da58300d3f2" absoluteBounds="4.75, 1.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DBUsuarioDataContext/TBTECNICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f4764fc-4f15-4310-a981-7ab5456c32cb" absoluteBounds="4.765, 2.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

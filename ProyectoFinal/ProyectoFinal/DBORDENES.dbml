@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDORDENES_LAB_HULE" Class="DBORDENESDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ASGARD\SQLEXPRESS;Initial Catalog=BDORDENES_LAB_HULE;Integrated Security=True" SettingsObjectName="ProyectoFinal.My.MySettings" SettingsPropertyName="BDORDENES_LAB_HULEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBCREARORDEN" Member="TBCREARORDEN">
+    <Type Name="TBCREARORDEN">
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIPOENSAYO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CANTMUESTRAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOMUESTRA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPRUEBA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TIPOCLIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PLAZO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBCERRARORDEN" Member="TBCERRARORDEN">
+    <Type Name="TBCERRARORDEN">
+      <Column Name="IDCIERRE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAEJEC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FECHACIERRE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCERRAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.BUSCAR_CREARORDEN" Method="BUSCAR_CREARORDEN">
+    <Parameter Name="IDORDEN" Parameter="iDORDEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSJ" Parameter="mSJ" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <ElementType Name="BUSCAR_CREARORDENResult">
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIPOENSAYO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CANTMUESTRAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOMUESTRA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPRUEBA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TIPOCLIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PLAZO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GUARDAR_CREARORDEN" Method="GUARDAR_CREARORDEN">
+    <Parameter Name="IDORDEN" Parameter="iDORDEN" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="FECHAORDEN" Parameter="fECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="SOLICITANTE" Parameter="sOLICITANTE" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TIPOENSAYO" Parameter="tIPOENSAYO" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CANTMUESTRAS" Parameter="cANTMUESTRAS" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TIPOMUESTRA" Parameter="tIPOMUESTRA" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="TIPOPRUEBA" Parameter="tIPOPRUEBA" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="RESPONSABLE" Parameter="rESPONSABLE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="CLIENTE" Parameter="cLIENTE" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="TIPOCLIENTE" Parameter="tIPOCLIENTE" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="PRIORIDAD" Parameter="pRIORIDAD" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PLAZO" Parameter="pLAZO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHAESTFINAL" Parameter="fECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="OBSERVACIONESCREAR" Parameter="oBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BUSCAR_ORDEN" Method="BUSCAR_ORDEN">
+    <ElementType Name="BUSCAR_ORDENResult">
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIPOENSAYO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CANTMUESTRAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOMUESTRA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPRUEBA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TIPOCLIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PLAZO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GUARDAR_CERRARORDEN" Method="GUARDAR_CERRARORDEN">
+    <Parameter Name="IDCIERRE" Parameter="iDCIERRE" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="IDORDEN" Parameter="iDORDEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FECHAEJEC" Parameter="fECHAEJEC" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="FECHACIERRE" Parameter="fECHACIERRE" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="ESTADO" Parameter="eSTADO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="OBSERVACIONESCERRAR" Parameter="oBSERVACIONESCERRAR" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="MENSAJE" Parameter="mENSAJE" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.BUSCAR_REPORTFECHORDEN" Method="BUSCAR_REPORTFECHORDEN">
+    <Parameter Name="FECHAORDENANT" Parameter="fECHAORDENANT" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="FECHAORDENDESP" Parameter="fECHAORDENDESP" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="MSJ" Parameter="mSJ" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <ElementType Name="BUSCAR_REPORTFECHORDENResult">
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIPOENSAYO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CANTMUESTRAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOMUESTRA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPRUEBA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TIPOCLIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PLAZO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IDCIERRE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDORDEN1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAEJEC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FECHACIERRE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCERRAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BUSCAR_CERRARORDEN" Method="BUSCAR_CERRARORDEN">
+    <Parameter Name="IDORDEN" Parameter="iDORDEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MSJ" Parameter="mSJ" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <ElementType Name="BUSCAR_CERRARORDENResult">
+      <Column Name="IDCIERRE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAEJEC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FECHACIERRE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCERRAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BUSCAR_CERRARORDENFECHCIERR" Method="BUSCAR_CERRARORDENFECHCIERR">
+    <Parameter Name="FECHACIERREANT" Parameter="fECHACIERREANT" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="FECHACIERREDESP" Parameter="fECHACIERREDESP" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="MSJ" Parameter="mSJ" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <ElementType Name="BUSCAR_CERRARORDENFECHCIERRResult">
+      <Column Name="IDCIERRE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAEJEC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FECHACIERRE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCERRAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IDORDEN1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIPOENSAYO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CANTMUESTRAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOMUESTRA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPRUEBA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TIPOCLIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PLAZO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BUSCAR_CERRARORDENESTAD" Method="BUSCAR_CERRARORDENESTAD">
+    <Parameter Name="ESTADO" Parameter="eSTADO" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="MSJ" Parameter="mSJ" Type="System.String" DbType="VarChar(100)" Direction="InOut" />
+    <ElementType Name="BUSCAR_CERRARORDENESTADResult">
+      <Column Name="IDCIERRE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDORDEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAEJEC" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FECHACIERRE" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCERRAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IDORDEN1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAORDEN" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SOLICITANTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIPOENSAYO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CANTMUESTRAS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIPOMUESTRA" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPOPRUEBA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CLIENTE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TIPOCLIENTE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PRIORIDAD" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PLAZO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FECHAESTFINAL" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="OBSERVACIONESCREAR" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
